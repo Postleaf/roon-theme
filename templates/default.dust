@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {! Document Settings !}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {! Page Meta !}
+    <title>{meta.title}</title>
+    <meta name="description" content="{meta.description}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {?Settings.favicon}
+      <link rel="shortcut icon" href="{@dynamicImage src=Settings.favicon thumbnail="256"/}" />
+    {/Settings.favicon}
+
+    {! Styles'n'Scripts !}
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="{@url type="theme" path="assets/css/screen.css"/}" />
+
+    {! Postleaf outputs important style and meta data with this tag !}
+    {@head/}
+</head>
+
+  <body class="{@bodyClass/} {@template name="blog"}user{/template} {@template name="tag"}user{/template} {@template name="author"}user{/template} {@template name="search"}user{/template} {@template name="post"}{^post.image}noimage{/post.image}{/template}">
+
+    {! Everything else gets inserted here !}
+    {+body/}
+
+    {?Settings.logo}
+        <a href="{@url/}" id="blog_badge">
+            <span style="background-image: url('{@url path=Settings.logo/}');">{Settings.title}</span>
+        </a>
+    {/Settings.logo}
+
+    <footer class="site-footer clearfix">
+        <form action="{@url type="search"/}" autocomplete="off">
+            <input type="search" name="s" placeholder="Search">
+            <button type="submit">Go</button>
+        </form>
+
+        <section class="copyright"><a href="{@url/}">{Settings.title}</a> &copy; {@date format="YYYY"/}</section>
+        <section class="poweredby">Proudly published with <a href="https://www.postleaf.org/">Postleaf</a></section>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+
+    <script>
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+        }
+    </script>
+
+    {! Postleaf outputs important scripts and data with this tag !}
+    {@foot/}
+
+</body>
+</html>

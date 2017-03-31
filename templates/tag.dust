@@ -1,0 +1,16 @@
+{>"default"/}
+
+{<body}
+
+    <header role="banner">
+        <div class="wrap">
+            <h1><a href="{@url/}">Tag: {tag.name}</a></h1>
+            <hr>
+        </div>
+    </header>
+
+    {>"partials/loop"/}
+
+    {>"partials/footer"/}
+
+{/body}

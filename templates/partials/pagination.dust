@@ -1,0 +1,12 @@
+{?pagination.prevPage}
+    <a href="{pagination.prevPageUrl}" class="btn nav prev">
+      <span aria-hidden="true" data-icon=">"></span>
+      Newer
+    </a>
+{/pagination.prevPage}
+{?pagination.nextPage}
+    <a href="{pagination.nextPageUrl}" class="btn nav next">
+      <span aria-hidden="true" data-icon=">"></span>
+      Older
+    </a>
+{/pagination.nextPage}

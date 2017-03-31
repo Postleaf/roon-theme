@@ -1,0 +1,29 @@
+<footer role="contentinfo">
+    <div class="inner">
+        <div class="vcard">
+            <a href="{@url type="feed"/}" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a>
+
+            {?Settings.logo}
+                <a href="{@url/}" class="photo circle">
+                    <span style="background-image: url('{@url path=Settings.logo/}');">
+                        <img src="{@url path=Settings.logo/}" alt="{Settings.title}">
+                    </span>
+                </a>
+            {/Settings.logo}
+
+            <div class="details">
+                <h4><a href="{@url/}" class="url n">{Settings.title}</a></h4>
+                <a href="{@url/}" class="js-remove-domain-schema">{@url/}</a><br>
+                <span>Published with <a href="https://www.postleaf.org">Postleaf</a></span>
+            </div>
+        </div>
+        <div id="user_bio">
+            <div class="inner">
+                {Settings.tagline}
+            </div>
+        </div>
+    </div>
+</footer>

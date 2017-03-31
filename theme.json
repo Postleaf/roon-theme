@@ -1,0 +1,10 @@
+{
+  "name": "Roon",
+  "description": "The Roon theme for Ghost. Now available for Postleaf.",
+  "version": "1.1.0",
+  "author": "",
+  "organization": "The Ghost Foundation",
+  "license": "MIT",
+  "url": "https://github.com/TryGhost/Roon",
+  "image": "assets/preview.png"
+}

@@ -1,0 +1,31 @@
+{! This is the post loop - each post will be output using this markup !}
+{#posts}
+
+    {! Add a `featured` class to the first post on each page, if it has an image !}
+    <article class="{@postClass post=./} {@first}{?image}featured{/image}{/first}">
+
+        {?image}
+            <div class="image-holder">
+                <a href="{@url type="post" slug=slug/}" class="inner" style="background-image: url('{@url path=image/}');">
+                    <img src="{@url path=image/}">
+                </a>
+            </div>
+        {/image}
+
+        <div class="meta">
+            <time datetime="{@date date=publishedAt format="YYYY-MM-DD"/}"><a href="{@url type="post" slug=slug/}">{@date date=publishedAt format="MMMM DD, YYYY"/}</a></time>
+        </div>
+
+        <header>
+            <h1><a href="{@url type="post" slug=slug/}">{title}</a></h1>
+        </header>
+
+        <div class="text">
+            {@excerpt content=content paragraphs="2"/}
+            <a href="{@url type="post" slug=slug/}" class="readmore">Continue Reading</a>
+        </div>
+    </article>
+{/posts}
+
+{! Previous/next page links - displayed on every page !}
+{>"partials/pagination"/}
