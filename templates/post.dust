@@ -15,7 +15,7 @@
         <article role="main" class="{?image}image{/image}">
             <header>
                 <a href="{@url/}" id="home_link">«</a>
-                <div class="meta"><time datetime="{date format="YYYY-MM-DD"/}"><a href="{@url type="post" slug=slug/}">{@date date=publishedAt format="MMMM DD, YYYY"/}</a></time> <span class="count">{@readingTime content=content/} min read</span></div>
+                <div class="meta"><time datetime="{date format="YYYY-MM-DD"/}"><a href="{@url type="post" slug=slug/}">{@date date=publishedAt format="MMMM DD, YYYY"/}</a></time> <span class="count">{@readingTime/} min read</span></div>
                 <h1>{@title editable="true"/}</h1>
             </header>
 
@@ -100,18 +100,22 @@
 
         <div id="post_nav">
             <nav role="navigation">
-                {@nextPost post=.}
-                    <a href="{@url type="post" slug=slug/}" id="post_next" title="Next Post">
-                        <span aria-hidden="true" data-icon=">"></span>
-                        The Newer Post
-                    </a>
-                {/nextPost}
-                {@nextPost post=. previous="true"}
-                    <a href="{@url type="post" slug=slug/}" id="post_prev" title="Previous Post">
-                        Something Older
-                        <span aria-hidden="true" data-icon=">"></span>
-                    </a>
-                {/nextPost}
+                {@getNextPost}
+                    {#post}
+                        <a href="{@url type="post" slug=slug/}" id="post_next" title="Next Post">
+                            <span aria-hidden="true" data-icon=">"></span>
+                            The Newer Post
+                        </a>
+                    {/post}
+                {/getNextPost}
+                {@getNextPost previous="true"}
+                    {#post}
+                        <a href="{@url type="post" slug=slug/}" id="post_prev" title="Previous Post">
+                            Something Older
+                            <span aria-hidden="true" data-icon=">"></span>
+                        </a>
+                    {/post}
+                {/getNextPost}
             </nav>
         </div>
 

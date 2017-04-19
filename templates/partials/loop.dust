@@ -2,7 +2,7 @@
 {#posts}
 
     {! Add a `featured` class to the first post on each page, if it has an image !}
-    <article class="{@postClass post=./} {@first}{?image}featured{/image}{/first}">
+    <article class="{@postClass/} {@first}{?image}featured{/image}{/first}">
 
         {?image}
             <div class="image-holder">
@@ -21,7 +21,7 @@
         </header>
 
         <div class="text">
-            {@excerpt content=content paragraphs="2"/}
+            {@excerpt paragraphs="2"/}
             <a href="{@url type="post" slug=slug/}" class="readmore">Continue Reading</a>
         </div>
     </article>
