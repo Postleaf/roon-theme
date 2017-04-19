@@ -6,5 +6,8 @@
   "organization": "The Ghost Foundation",
   "license": "MIT",
   "url": "https://github.com/TryGhost/Roon",
-  "image": "assets/preview.png"
+  "image": "assets/preview.png",
+  "customPostTemplates": [
+    { "name": "Page", "filename": "post.page.dust" }
+  ]
 }
