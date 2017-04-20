@@ -4,7 +4,15 @@
 
     <header role="banner">
         <div class="wrap">
-            <h1><a href="{@url/}">Search: “{query}”</a></h1>
+            <h1>
+                <a href="{@url/}">
+                    {?query}
+                        Results for “{query}”
+                    {:else}
+                        Search
+                    {/query}
+                </a>
+            </h1>
             <hr>
         </div>
     </header>
