@@ -1156,13 +1156,18 @@ body>footer form {
     margin-bottom: 2em;
 }
 body>footer input[type="search"] {
-    width: 10em;
+    width: 15em;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
     border: solid 1px #ededee;
     border-radius: .25em;
     padding: .25em .5em;
+    transition: .2s border;
+}
+body>footer input[type="search"]:focus {
+    border-color: #bbb;
+    outline: none;
 }
 body>footer button {
     font-family: inherit;
