@@ -24,7 +24,7 @@
     {@head/}
 </head>
 
-  <body class="{@bodyClass/} {@template name="blog"}user{/template} {@template name="tag"}user{/template} {@template name="author"}user{/template} {@template name="search"}user{/template} {@template name="post"}{^post.image}noimage{/post.image}{/template}">
+    <body class="{@bodyClass/} {^post}user{/post} {^post.image}noimage{/post.image}">
 
     {! Everything else gets inserted here !}
     {+body/}
