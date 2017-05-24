@@ -12,6 +12,10 @@ The Roon theme for Ghost. Now available for Postleaf.
 2. From the Postleaf admin panel, go to Settings > Themes and select it from the list.
 3. Hit save.
 
+## Preview
+
+![Screenshot](http://postleaf.s3.amazonaws.com/website/images/roon_screenshot.png)
+
 ## Copyright & License
 
 Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
