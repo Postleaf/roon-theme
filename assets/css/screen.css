@@ -1196,6 +1196,7 @@ body>a.btn.nav.loading {
 }
 body>footer, .post-footer {
     position: relative;
+    clear: both;
     border-top: 1px solid #ededee;
     padding: 50px 0;
     -webkit-text-size-adjust: none;
