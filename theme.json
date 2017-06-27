@@ -8,6 +8,6 @@
   "url": "https://github.com/TryGhost/Roon",
   "image": "assets/preview.png",
   "customPostTemplates": [
-    { "name": "Page", "filename": "post_page.dust" }
+    { "name": "Page", "filename": "page.dust" }
   ]
 }
